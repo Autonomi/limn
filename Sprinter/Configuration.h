@@ -53,15 +53,6 @@ const bool Z_ENDSTOP_INVERT = false;
 #define BAUDRATE 115200
 //#define BAUDRATE 250000
 
-// Comment out (using // at the start of the line) to disable SD support:
-#define SDSUPPORT
-
-// Uncomment to make run init.g from SD on boot
-//#define SDINITFILE
-
-//Only work with Atmega1284 you need +1 kb ram
-//#define SD_FAST_XFER_AKTIV
-
 //-----------------------------------------------------------------------
 //// STORE SETTINGS TO EEPROM
 //-----------------------------------------------------------------------
@@ -83,17 +74,6 @@ const bool Z_ENDSTOP_INVERT = false;
 //Uncomment to aktivate the arc (circle) function (G2/G3 Command)
 //Without SD function an ARC function the used Flash is smaller 31 kb
 #define USE_ARC_FUNCTION
-
-//-----------------------------------------------------------------------
-//// ADVANCED SETTINGS - to tweak parameters
-//-----------------------------------------------------------------------
-
-#ifdef SDSUPPORT
-	#ifdef SD_FAST_XFER_AKTIV
-		//Fast transfer chunk size (> 1024 is unstable, change at your own risk).
-		#define SD_FAST_XFER_CHUNK_SIZE 1024
-	#endif
-#endif
 
 //-----------------------------------------------------------------------
 // For Inverting Stepper Enable Pins (Active Low) use 0, Non Inverting (Active High) use 1
@@ -129,6 +109,7 @@ const bool INVERT_E_DIR = false;
 #define X_HOME_DIR -1
 #define Y_HOME_DIR -1
 #define Z_HOME_DIR -1
+#define E_HOME_DIR 1
 
 //#define ENDSTOPS_ONLY_FOR_HOMING // If defined the endstops will only be used for homing
 
@@ -142,6 +123,7 @@ const bool max_software_endstops = true; //If true, axis won't move to coordinat
 const int X_MAX_LENGTH = 200;
 const int Y_MAX_LENGTH = 200;
 const int Z_MAX_LENGTH = 100;
+const int E_MAX_LENGTH = 20;
 
 //-----------------------------------------------------------------------
 //// MOVEMENT SETTINGS
