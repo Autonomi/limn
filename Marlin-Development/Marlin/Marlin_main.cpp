@@ -1001,7 +1001,7 @@ static void axis_is_at_home(int axis) {
     }
   #endif
 
-  #ifdef SCARA
+  #ifdef SCRA
    
     if (axis == X_AXIS || axis == Y_AXIS) {
 
@@ -1816,14 +1816,6 @@ inline void gcode_G4() {
  *
  */
 inline void gcode_G28() {
-
-  // For auto bed leveling, clear the level matrix
-  #ifdef ENABLE_AUTO_BED_LEVELING
-    plan_bed_level_matrix.set_to_identity();
-    #ifdef DELTA
-      reset_bed_level();
-    #endif
-  #endif
 
   // For manual bed leveling deactivate the matrix temporarily
   #ifdef MESH_BED_LEVELING
