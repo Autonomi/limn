@@ -24,9 +24,9 @@
 #define MAX_COMMANDS 8 
 
 struct command_t {
-        uint8_t type; //i.e. G or M
-        double  value; //string value associated
-        //struct command_t *next;
+  uint8_t type; //i.e. G or M
+  double  value; //string value associated
+  //struct command_t *next;
 };
 
 //str: token in the form of Xnnn

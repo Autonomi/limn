@@ -23,7 +23,7 @@ Z_jog= 0.1
 # get a serial instance and open it later
 ser = serial.Serial()
 ser.baudrate = 9600
-ser.port = "COM6"
+ser.port = "/dev/tty.usbmodem1411"
 ser.timeout = 1
 
 class GUIFramework(Frame):
