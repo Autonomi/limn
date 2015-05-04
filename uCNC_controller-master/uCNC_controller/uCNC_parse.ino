@@ -36,8 +36,7 @@ struct command_t {
 struct command_t command_list[MAX_COMMANDS];
 uint8_t commandLength = 0;
 
-void addObj(uint8_t *str) 
-{
+void addObj(uint8_t *str) {
   struct command_t *c;
   if (commandLength == MAX_COMMANDS) {
      return;
@@ -47,22 +46,13 @@ void addObj(uint8_t *str)
   c->value  = strtod((const char*)&str[1], NULL);
 }
 
-void purge_commands() 
-{
+void purge_commands() {
   commandLength = 0;
 }
 
-void parse_commands(uint8_t *str) 
-{
+void parse_commands(uint8_t *str) {
   uint8_t *token;
   uint8_t index = 0;
-/* 
-  do {
-    token = (uint8_t*)strtok((char*)str, " \t"); //split on spaces and tabs
-    str = NULL;
-    if (token) addObj(token);
-  } while (token);
-*/
 
   while (str[index]) {
     token=str+index;
@@ -83,8 +73,7 @@ void parse_commands(uint8_t *str)
 }
 
 //returns zero if value does not exist.
-double getValue(const char x) 
-{
+double getValue(const char x) {
   int i;
   //find entry
   for (i=0; i<commandLength; i++) {
@@ -99,8 +88,7 @@ double getValue(const char x)
 }
 
 
-bool command_exists(const char x) 
-{
+bool command_exists(const char x) {
   for (int i=0; i<commandLength; i++) {
     if (command_list[i].type == x) return 1;
   }
