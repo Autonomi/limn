@@ -49,4 +49,9 @@
 #define P_MAX 200       // Maximum Print Head movement allowed (mm)
 #define P_D_F true      // P_DIRECTION_FORWARD Allows to adjust P-stepper motor direction.
 
+// Pulse delays
+#define X_Y_PULSE   10
+#define Z_PULSE     50
+#define P_PULSW     10
+
 #endif

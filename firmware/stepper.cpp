@@ -56,8 +56,37 @@ public:
     }
 
     static bool disable_x () {
-        digitalWrite(X_ENB, LOW);
+        digitalWrite(X_ENB, HIGH);
     }
+
+    static bool x_forward () {
+        if (X_D_F) digitalWrite(X_DIR, HIGH);
+        else digitalWrite(X_DIR, LOW);
+    }
+
+    static bool x_reverse () {
+        if (X_D_F) digitalWrite(X_DIR, LOW);
+        else digitalWrite(X_DIR, HIGH);
+    }
+
+    static bool enable_y() {
+        digitalWrite(Y_ENB, LOW);
+    }
+
+    static bool disable_y () {
+        digitalWrite(Y_ENB, HIGH);
+    }
+
+    static bool y_forward () {
+        if (Y_D_F) digitalWrite(Y_DIR, HIGH);
+        else digitalWrite(Y_DIR, LOW);
+    }
+
+    static bool y_reverse () {
+        if (Y_D_F) digitalWrite(Y_DIR, LOW);
+        else digitalWrite(Y_DIR, HIGH);
+    }
+
 
     static bool step_x_y () {
         //
