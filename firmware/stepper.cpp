@@ -69,7 +69,7 @@ public:
         else digitalWrite(X_DIR, HIGH);
     }
 
-    static bool enable_y() {
+    static bool enable_y () {
         digitalWrite(Y_ENB, LOW);
     }
 
@@ -87,6 +87,41 @@ public:
         else digitalWrite(Y_DIR, HIGH);
     }
 
+    static bool enable_z () {
+        digitalWrite(Z_ENB, LOW);
+    }
+
+    static bool disable_z () {
+        digitalWrite(Y_ENB, HIGH);
+    }
+
+    static bool z_forward () {
+        if (Z_D_F) digitalWrite(Z_DIR, HIGH);
+        else digitalWrite(Z_DIR, LOW);
+    }
+
+    static bool z_reverse () {
+        if (Z_D_F) digitalWrite(Z_DIR, LOW);
+        else digitalWrite(Z_DIR, HIGH);
+    }
+
+    static bool enable_p () {
+        digitalWrite(P_ENB, LOW);
+    }
+
+    static bool disable_p () {
+        digitalWrite(P_ENB, HIGH);
+    }
+
+    static bool p_forward () {
+        if (P_D_F) digitalWrite(P_DIR, HIGH);
+        else digitalWrite(P_DIR, LOW);
+    }
+
+    static bool p_reverse () {
+        if (P_D_F) digitalWrite(P_DIR, LOW);
+        else digitalWrite(P_DIR, HIGH);
+    }
 
     static bool step_x_y () {
         //
